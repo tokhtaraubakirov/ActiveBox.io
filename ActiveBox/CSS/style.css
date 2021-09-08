@@ -1,0 +1,353 @@
+body {
+  margin: 0;
+  
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #6c7279;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0 0 10px 0;/*margin(вверх, право, вниз, лево)*/
+}
+
+
+/* -----------Container----------- */
+
+.container {
+  width: 100%;
+  max-width: 1170px; 
+  margin: 0 auto;
+}
+
+/* -----------Header----------- */
+.header {
+  position: absolute;/*Типо слоя в фотошопе под другими слоями*/
+  width:100%;
+  height: 100px;
+  top: 0;
+  left: 0;
+  z-index: 1000;/*это все делается чтобы картинка бэкграунд так же лежала и на header, а то если не будет то картинку появится ниже черты*/
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;/*Разделил лого от навигации, лого слева и навигация справа*/
+  align-items: center;/*Выравнивание по центру без прилипаний к верху*/
+  padding: 35px 0;/*расстояние между верхом и низом, а то без этого линия прилипнет к элементам*/
+  border-bottom: 1px solid #505268;/*Устанавливает границу то есть нижнее подчеркивание*/
+}
+
+/* -----------Nav----------- */
+.nav {
+  display: flex;
+  font-size: 13px;
+  font-weight: 700;/*Bold*/
+  text-transform: uppercase;/*Делаем слова большими*/
+}
+
+.nav__link {
+  margin-left: 50px;/*разделение элементов между собой*/
+  color: #fff;
+  text-decoration: none;/*Убибраем нижнее подчеркивание*/
+  opacity: 0.75;/*прозрачность*/
+
+  transition: opacity 0.1s linear;/*а это делает плавный переход*/
+}
+
+.nav__link:first-child {
+  margin-left: 0;
+}
+
+.nav__link:hover {
+  opacity: 1;/*делает при наводе не прозрачным*/
+
+  /*text-decoration: underline;/*По умолчанию мы убрали подчеркивание, но при наводе оно есть. Можно добавить если хочется подчеркнуть*/
+}
+
+/* -----------Intro----------- */
+
+.intro {
+  display: flex;
+  flex-direction: column;/*Каждый новый элемент в intro будет начинаться с новой строки*/
+  justify-content: center;
+  background: #31344e url(https://cdn.wallpapersafari.com/91/0/SRuG02.jpg) no-repeat center;
+
+  background-size: cover;
+  height: 750px;
+  
+  padding-top: 100px;/*Без этого текст в классе intro будет появляться прям наверху, а так теперь под линией*/
+}
+
+.intro__inner {
+  width: 100%;
+  max-width: 970px;
+  margin: 0 auto;/*Выравниваем по центру*/
+  text-align: center;/*перемщает текст в центр*/
+}
+
+
+.intro__title {
+  margin: 0 0 20px 0;/*отделяем заголовок от параграфа на 30px*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 60px;
+  line-height: 1.1;/*Меж строчная высота*/
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  
+}
+
+.intro__subtitle {
+  color: #fff;
+  line-height: 1.5;
+  font-size: 22px;
+  font-weight: 100;
+  margin-bottom: 60px;
+}
+
+/* -----------Button----------- */
+
+.btn {
+  display: inline-block;/*задавать padding сверху и внизу, размеры*/
+  vertical-align: top;/*делаем вертикальное выравниевание по верху*/
+  padding: 14px 40px;/*14px-это отступы сверху и снизу, а 40px-это слева и справа, это расширить гранизы кнопки*/
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;/*скругляем границы кнопки*/
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  border: 0;
+  transition: background .1s linear;
+}
+
+.btn--red {
+  background-color: rgb(231, 63, 77)
+}
+
+.btn--red:hover {
+  background-color: rgb(236, 40, 57);
+}
+
+.btn--long {
+  min-width: 280px;/*для нижней кнопки*/
+}
+
+/* -----------Features----------- */
+
+.features {
+  display: flex;/*Чтобы легче расположить объекты*/
+  flex-wrap: wrap;/*Если объкты не помещаются в линию то оно переносится на новую строку, поскольку в линии три объекта то теперь на следующую*/
+  margin: 95px 0;
+}
+
+.features__item {
+  width: 33.33333%;/*100%/3, потому что болка в строке 3 поэтому делим на 3*/
+  padding: 0px 40px;
+  margin: 25px 0;
+  text-align: center;/*выровнять текст и лого по центру*/
+}
+
+
+.features__icon {
+  margin-bottom: 25px;
+}
+
+.features__title {
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+.features__paragraph {
+  color: #6c7279;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/*-----Works-----*/
+.works {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.works__item {
+  width: 25%;/*картинок 4, поэтому по 25%*/
+  height: 350px;
+
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+
+  position: relative;
+  overflow: hidden;/*скрывать то что выходит за пределы*/
+}
+
+.works__item:hover .works__content {
+  opacity: 1;
+}
+
+.works__picture {
+  position: absolute;/*теперь картинка находится вутри блока works__item*/
+  top: 50%;/*прижать к верху*/
+  left: 50%;/*прижать к леву*/
+  z-index: 1;
+
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.works__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;/*выравнивание контента по центру*/
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;/*выравниваем текста по центру*/
+  
+  opacity: 0;
+
+  background-color: rgba(232, 69, 69, .9);
+
+  transition: opacity 0.2s linear;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.works__title {
+  margin-bottom: 3px;
+
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.works__text {
+  font-size: 14px;
+  color: #fff;
+}
+
+/*----Download----*/
+.download {
+  margin: 90px 0;/*отступы*/
+
+  text-align: center;
+}
+
+.download__title {
+  margin-bottom: 13px;
+
+  font-size: 28px;
+  color: #2d3033;
+  font-weight: 300;
+}
+
+.download__text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2d3033;
+
+  text-transform: uppercase;
+
+  margin-bottom: 35px;
+}
+
+/* -----------Footer----------- */
+
+.footer {
+  padding: 50px 0;
+
+  background-color: #3a3e64;
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__block {
+  width: 33.33333%;
+
+  text-align: center;
+}
+
+.footer__title {
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  
+  margin-bottom: 14px;
+
+}
+
+.footer__address {
+  font-style: normal;/*делает текст не наклонным*/
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+
+  line-height: 1.5;
+}
+
+
+/* Social
+===============*/
+
+.social {
+  display: inline-flex;
+
+  margin-top: 4px;
+}
+
+.social__item {/*it's border*/
+  display: inline-flex;
+  justify-content: center;/*горизонтально*/
+  align-items: center;/*по вертикали*/
+  height: 35px;
+  width: 35px;
+  padding: 15px;
+  border: 2px solid #fff;
+  margin: 0 3px;
+  
+  border-radius: 2px;
+}
+
+.social {
+  background-color:#3a3e64;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
